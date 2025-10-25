@@ -11,7 +11,7 @@ import AnimatedSection from './components/AnimatedSection';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-navy font-poppins">
+    <div className="bg-off-white font-poppins">
       <CustomCursor />
       <Header />
       <main className="container mx-auto px-6 sm:px-10 md:px-16">

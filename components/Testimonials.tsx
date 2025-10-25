@@ -20,19 +20,19 @@ const testimonialsData: Testimonial[] = [
 const Testimonials: React.FC = () => {
   return (
     <section id="testimonios" className="py-24">
-      <h2 className="text-3xl font-bold text-center text-lightest-slate mb-12">
-        <span className="text-cyan-accent font-mono text-xl mr-2">03.</span>
+      <h2 className="text-3xl font-bold text-center text-dark-slate mb-12">
+        <span className="text-primary-blue font-mono text-xl mr-2">03.</span>
         Lo Que Dicen Nuestros Clientes
       </h2>
       <div className="grid lg:grid-cols-2 gap-8">
         {testimonialsData.map((testimonial, index) => (
-          <div key={index} className="relative bg-light-navy p-8 rounded-lg shadow-lg">
-            <QuoteIcon className="absolute top-4 right-4 w-12 h-12 text-lightest-navy" aria-hidden="true" />
-            <p className="text-light-slate italic mb-6 relative z-10">"{testimonial.quote}"</p>
+          <div key={index} className="relative bg-white p-8 rounded-lg shadow-lg">
+            <QuoteIcon className="absolute top-4 right-4 w-12 h-12 text-light-slate" aria-hidden="true" />
+            <p className="text-slate italic mb-6 relative z-10">"{testimonial.quote}"</p>
             <div className="flex items-center">
-              <img src={testimonial.avatar} alt={testimonial.name} className="w-14 h-14 rounded-full mr-4 border-2 border-cyan-accent" />
+              <img src={testimonial.avatar} alt={testimonial.name} className="w-14 h-14 rounded-full mr-4 border-2 border-primary-blue" />
               <div>
-                <p className="font-bold text-lightest-slate">{testimonial.name}</p>
+                <p className="font-bold text-dark-slate">{testimonial.name}</p>
                 <p className="text-sm text-slate">{testimonial.title}</p>
               </div>
             </div>

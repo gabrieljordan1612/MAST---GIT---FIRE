@@ -23,8 +23,8 @@ const Contact: React.FC = () => {
   return (
     <section id="contacto" className="py-24">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-lightest-slate mb-4">
-          <span className="text-cyan-accent font-mono text-xl mr-2">04.</span>
+        <h2 className="text-3xl font-bold text-dark-slate mb-4">
+          <span className="text-primary-blue font-mono text-xl mr-2">04.</span>
           Hablemos de tu Proyecto
         </h2>
         <p className="text-lg text-slate max-w-2xl mx-auto mb-12">
@@ -34,38 +34,38 @@ const Contact: React.FC = () => {
       <div className="grid md:grid-cols-2 gap-12">
         <div className="flex flex-col justify-center">
             <div className="mb-8">
-                <h3 className="text-xl font-bold text-lightest-slate mb-2">Dirección</h3>
+                <h3 className="text-xl font-bold text-dark-slate mb-2">Dirección</h3>
                 <p className="text-slate">Calle de la Innovación 123, 28080 Madrid, España</p>
             </div>
             <div className="mb-8">
-                <h3 className="text-xl font-bold text-lightest-slate mb-2">Contacto Directo</h3>
+                <h3 className="text-xl font-bold text-dark-slate mb-2">Contacto Directo</h3>
                 <p className="text-slate">Email: hola@mast.dev</p>
                 <p className="text-slate">Teléfono: +34 912 345 678</p>
             </div>
             <div>
-                <h3 className="text-xl font-bold text-lightest-slate mb-4">Síguenos</h3>
+                <h3 className="text-xl font-bold text-dark-slate mb-4">Síguenos</h3>
                 <div className="flex space-x-4">
-                    <a href="#" className="text-slate hover:text-cyan-accent transform hover:-translate-y-1 transition-all duration-300"><TwitterIcon className="w-6 h-6" /></a>
-                    <a href="#" className="text-slate hover:text-cyan-accent transform hover:-translate-y-1 transition-all duration-300"><LinkedInIcon className="w-6 h-6" /></a>
-                    <a href="#" className="text-slate hover:text-cyan-accent transform hover:-translate-y-1 transition-all duration-300"><GithubIcon className="w-6 h-6" /></a>
+                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><TwitterIcon className="w-6 h-6" /></a>
+                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><LinkedInIcon className="w-6 h-6" /></a>
+                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><GithubIcon className="w-6 h-6" /></a>
                 </div>
             </div>
         </div>
 
         <form onSubmit={handleSubmit} className="w-full">
           <div className="mb-4">
-            <label htmlFor="name" className="block text-light-slate mb-2">Nombre</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-light-navy border border-lightest-navy/50 rounded py-2 px-3 text-white transition-shadow duration-300 focus:outline-none focus:border-cyan-accent" />
+            <label htmlFor="name" className="block text-slate mb-2">Nombre</label>
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue" />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-light-slate mb-2">Email</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-light-navy border border-lightest-navy/50 rounded py-2 px-3 text-white transition-shadow duration-300 focus:outline-none focus:border-cyan-accent" />
+            <label htmlFor="email" className="block text-slate mb-2">Email</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue" />
           </div>
           <div className="mb-6">
-            <label htmlFor="message" className="block text-light-slate mb-2">Mensaje</label>
-            <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required className="w-full bg-light-navy border border-lightest-navy/50 rounded py-2 px-3 text-white transition-shadow duration-300 focus:outline-none focus:border-cyan-accent"></textarea>
+            <label htmlFor="message" className="block text-slate mb-2">Mensaje</label>
+            <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue"></textarea>
           </div>
-          <button type="submit" className="w-full bg-cyan-accent text-navy font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-80 transition-all duration-300">
+          <button type="submit" className="w-full bg-primary-blue text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300">
             Enviar Mensaje
           </button>
         </form>

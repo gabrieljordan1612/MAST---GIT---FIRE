@@ -27,8 +27,8 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section id="nosotros" className="py-24">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-lightest-slate mb-4">
-          <span className="text-cyan-accent font-mono text-xl mr-2">02.</span>
+        <h2 className="text-3xl font-bold text-dark-slate mb-4">
+          <span className="text-primary-blue font-mono text-xl mr-2">02.</span>
           Por qué Elegirnos
         </h2>
         <p className="text-lg text-slate max-w-3xl mx-auto mb-12">
@@ -37,11 +37,11 @@ const WhyChooseUs: React.FC = () => {
       </div>
       <div className="grid md:grid-cols-3 gap-8">
         {benefitsData.map((benefit, index) => (
-          <div key={index} className="bg-light-navy/50 text-center p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-accent/10 border border-transparent hover:border-cyan-accent/20">
+          <div key={index} className="bg-white text-center p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-primary-blue/10 border border-transparent hover:border-primary-blue/20">
             <div className="flex justify-center mb-4">
-              <CheckIcon className="w-12 h-12 text-cyan-accent" />
+              <CheckIcon className="w-12 h-12 text-primary-blue" />
             </div>
-            <h3 className="text-xl font-bold text-lightest-slate mb-2">{benefit.title}</h3>
+            <h3 className="text-xl font-bold text-dark-slate mb-2">{benefit.title}</h3>
             <p className="text-slate">{benefit.description}</p>
           </div>
         ))}
