@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Service } from '../types';
 import { CodeIcon, CartIcon, LibraryIcon } from './icons';
@@ -22,7 +21,7 @@ const servicesData: Service[] = [
 ];
 
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => (
-  <div className="bg-light-navy p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-accent/10 border border-transparent hover:border-cyan-accent/20">
+  <div className="bg-light-navy p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-accent/10 border border-transparent hover:border-cyan-accent/20">
     <div className="mb-4">{service.icon}</div>
     <h3 className="text-xl font-bold text-lightest-slate mb-2">{service.title}</h3>
     <p className="text-slate">{service.description}</p>
@@ -33,6 +32,7 @@ const Services: React.FC = () => {
   return (
     <section id="servicios" className="py-24">
       <h2 className="text-3xl font-bold text-center text-lightest-slate mb-12">
+        <span className="text-cyan-accent font-mono text-xl mr-2">01.</span>
         Nuestros Servicios
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

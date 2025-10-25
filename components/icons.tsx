@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const CodeIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -16,6 +15,12 @@ export const CartIcon: React.FC<{ className?: string }> = ({ className }) => (
 export const LibraryIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V5.636a1.875 1.875 0 011.523-1.838l.44-2.201a1.875 1.875 0 00-3.638-1.025l-.44 2.201a1.875 1.875 0 01-1.523 1.838V21M3 9v12m18-12v12" />
+  </svg>
+);
+
+export const QuoteIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className={className}>
+    <path d="M14.017 21v-7.391c0-2.908 1.698-4.858 4.983-4.858l.025.001v3.633c-1.382.023-2.017.61-2.017 2.225v6.39zM4.017 21v-7.391c0-2.908 1.698-4.858 4.983-4.858l.025.001v3.633c-1.383.023-2.017.61-2.017 2.225v6.39z" />
   </svg>
 );
 
