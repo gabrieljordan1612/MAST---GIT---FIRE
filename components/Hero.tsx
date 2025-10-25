@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
       <BackgroundParticles />
       <div className="relative z-10 text-center max-w-4xl mx-auto -mt-20">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-lightest-slate to-slate mb-4">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-dark-slate to-slate mb-4">
           Creamos Experiencias Digitales que Impulsan tu Negocio
         </h1>
         <p className="text-lg md:text-xl text-slate mb-8 max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
         </p>
         <a 
           href="#contacto"
-          className="bg-cyan-accent text-navy font-bold py-4 px-8 rounded-lg text-lg hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-accent/20"
+          className="bg-primary-blue text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-blue/30"
         >
           Solicita tu Web
         </a>
