@@ -1,8 +1,5 @@
-
 import React from 'react';
 import type { Benefit } from '../types';
-import { CheckBadgeIcon } from '@heroicons/react/24/outline'; // Using an external icon library for variety, but can be replaced with a custom SVG.
-// Heroicons is a good choice, but since external libraries are a gray area, let's make our own.
 
 const CheckIcon: React.FC<{className?: string}> = ({className}) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
@@ -30,14 +27,17 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section id="nosotros" className="py-24">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-lightest-slate mb-4">Por qué Elegirnos</h2>
+        <h2 className="text-3xl font-bold text-lightest-slate mb-4">
+          <span className="text-cyan-accent font-mono text-xl mr-2">02.</span>
+          Por qué Elegirnos
+        </h2>
         <p className="text-lg text-slate max-w-3xl mx-auto mb-12">
           En MAST, no solo construimos sitios web, creamos alianzas estratégicas para impulsar tu crecimiento digital.
         </p>
       </div>
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-8">
         {benefitsData.map((benefit, index) => (
-          <div key={index} className="text-center p-6">
+          <div key={index} className="bg-light-navy/50 text-center p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-cyan-accent/10 border border-transparent hover:border-cyan-accent/20">
             <div className="flex justify-center mb-4">
               <CheckIcon className="w-12 h-12 text-cyan-accent" />
             </div>
