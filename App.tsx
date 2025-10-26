@@ -14,8 +14,8 @@ const App: React.FC = () => {
     <div className="bg-off-white font-poppins">
       <CustomCursor />
       <Header />
+      <Hero />
       <main className="container mx-auto px-6 sm:px-10 md:px-16">
-        <Hero />
         <AnimatedSection>
           <Services />
         </AnimatedSection>
