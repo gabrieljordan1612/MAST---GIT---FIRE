@@ -1,74 +1,72 @@
-import React, { useState } from 'react';
-import { TwitterIcon, LinkedInIcon, GithubIcon } from './icons';
+import React from 'react';
+import { PhoneIcon, MailIcon, LocationIcon, ChevronDownIcon } from './icons';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically handle form submission (e.g., send to an API)
-    alert('Gracias por tu mensaje. Nos pondremos en contacto pronto.');
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   return (
-    <section id="contacto" className="py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-dark-slate mb-4">
-          <span className="text-primary-blue font-mono text-xl mr-2">04.</span>
-          Hablemos de tu Proyecto
-        </h2>
-        <p className="text-lg text-slate max-w-2xl mx-auto mb-12">
-          ¿Tienes una idea? Estamos aquí para ayudarte a hacerla realidad. Rellena el formulario o contáctanos directamente.
-        </p>
-      </div>
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="flex flex-col justify-center">
-            <div className="mb-8">
-                <h3 className="text-xl font-bold text-dark-slate mb-2">Dirección</h3>
-                <p className="text-slate">Calle de la Innovación 123, 28080 Madrid, España</p>
+    <section 
+      id="contacto" 
+      className="py-16"
+      style={{
+        backgroundColor: '#000000',
+        backgroundImage: 'radial-gradient(rgba(162, 213, 198, 0.1) 1px, transparent 1px)',
+        backgroundSize: '20px 20px'
+      }}
+    >
+      <div className="container mx-auto px-6 lg:px-12 text-white">
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Hagamos algo grande</h2>
+            <p className="text-lg opacity-80 mb-10 max-w-lg">
+              Cuéntanos sobre tu idea, empresa o marca y nos encargaremos de brindarte soluciones reales.
+            </p>
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <PhoneIcon className="w-6 h-6 text-brand-accent" />
+                <span className="text-lg">+51 938 236 622</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <MailIcon className="w-6 h-6 text-brand-accent" />
+                <span className="text-lg">info@mast.pe</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <LocationIcon className="w-6 h-6 text-brand-accent" />
+                <span className="text-lg">Av. Almirante Miguel Grau 1380, Barranco, Lima – Perú</span>
+              </div>
             </div>
-            <div className="mb-8">
-                <h3 className="text-xl font-bold text-dark-slate mb-2">Contacto Directo</h3>
-                <p className="text-slate">Email: hola@mast.dev</p>
-                <p className="text-slate">Teléfono: +34 912 345 678</p>
-            </div>
-            <div>
-                <h3 className="text-xl font-bold text-dark-slate mb-4">Síguenos</h3>
-                <div className="flex space-x-4">
-                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><TwitterIcon className="w-6 h-6" /></a>
-                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><LinkedInIcon className="w-6 h-6" /></a>
-                    <a href="#" className="text-slate hover:text-primary-blue transform hover:-translate-y-1 transition-all duration-300"><GithubIcon className="w-6 h-6" /></a>
-                </div>
-            </div>
-        </div>
+          </div>
 
-        <form onSubmit={handleSubmit} className="w-full">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-slate mb-2">Nombre</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue" />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-slate mb-2">Email</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue" />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-slate mb-2">Mensaje</label>
-            <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required className="w-full bg-white border border-light-slate rounded py-2 px-3 text-dark-slate transition-shadow duration-300 focus:outline-none focus:border-primary-blue"></textarea>
-          </div>
-          <button type="submit" className="w-full bg-primary-blue text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300">
-            Enviar Mensaje
-          </button>
-        </form>
+          <form className="space-y-4">
+            <input type="text" placeholder="Nombres y Apellidos*" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
+            <div className="grid sm:grid-cols-2 gap-4">
+              <input type="email" placeholder="Correo" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
+              <input type="tel" placeholder="Celular" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
+            </div>
+             <div className="grid sm:grid-cols-2 gap-4">
+                <div className="relative">
+                    <select className="w-full bg-white text-brand-dark p-4 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-brand-accent">
+                        <option>¿Quién soy?</option>
+                    </select>
+                    <ChevronDownIcon className="w-5 h-5 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                </div>
+                <input type="text" placeholder="Empresa" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
+             </div>
+            <div className="relative">
+                <select className="w-full bg-white text-brand-dark p-4 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-brand-accent">
+                    <option>Necesito</option>
+                </select>
+                <ChevronDownIcon className="w-5 h-5 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+            </div>
+            <input type="text" placeholder="Cuéntanos cual es tu presupuesto" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
+            <textarea placeholder="Cuéntanos un poco de tus requerimientos" rows={4} className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"></textarea>
+            <div className="flex items-center gap-3">
+              <input type="checkbox" id="privacy" className="h-5 w-5 rounded border-gray-300 text-brand-accent focus:ring-brand-accent" />
+              <label htmlFor="privacy" className="text-sm opacity-80">He leído la política de privacidad de MAST y acepto recibir sus comunicaciones.</label>
+            </div>
+            <button type="submit" className="w-full bg-brand-accent text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300">
+              Enviar
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

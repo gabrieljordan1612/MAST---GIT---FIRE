@@ -1,50 +1,50 @@
 import React from 'react';
-import type { Benefit } from '../types';
+import { BrandingIcon, SeoIcon, SocialMediaIcon, WebDevIcon } from './icons'; // Reusing icons for demonstration
 
-const CheckIcon: React.FC<{className?: string}> = ({className}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
+const ValueIcon: React.FC<{ icon: React.ElementType; title: string }> = ({ icon: Icon, title }) => (
+  <div className="flex items-center gap-4">
+    <div className="bg-brand-light-gray/50 p-3 rounded-lg">
+      <Icon className="w-6 h-6 text-brand-blue" />
+    </div>
+    <span className="font-semibold text-brand-dark">{title}</span>
+  </div>
 );
 
-
-const benefitsData: Benefit[] = [
-  {
-    title: 'Calidad Insuperable',
-    description: 'Nos obsesionamos con los detalles. Cada línea de código y cada pixel está diseñado para alcanzar la perfección y superar tus expectativas.',
-  },
-  {
-    title: 'Entrega Rápida y Eficiente',
-    description: 'Valoramos tu tiempo. Implementamos metodologías ágiles para garantizar que tu proyecto se complete en los plazos acordados, sin sacrificar calidad.',
-  },
-  {
-    title: 'Soporte Continuo',
-    description: 'Tu éxito es nuestro éxito. Ofrecemos soporte y mantenimiento post-lanzamiento para asegurar que tu plataforma funcione siempre a la perfección.',
-  },
-];
-
 const WhyChooseUs: React.FC = () => {
+  const values = [
+    { title: 'Marca', icon: BrandingIcon },
+    { title: 'Posicionamiento', icon: SeoIcon },
+    { title: 'Fidelización', icon: SocialMediaIcon },
+    { title: 'Más clientes', icon: WebDevIcon },
+  ];
+
   return (
-    <section id="nosotros" className="py-24">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-dark-slate mb-4">
-          <span className="text-primary-blue font-mono text-xl mr-2">02.</span>
-          Por qué Elegirnos
-        </h2>
-        <p className="text-lg text-slate max-w-3xl mx-auto mb-12">
-          En MAST, no solo construimos sitios web, creamos alianzas estratégicas para impulsar tu crecimiento digital.
-        </p>
-      </div>
-      <div className="grid md:grid-cols-3 gap-8">
-        {benefitsData.map((benefit, index) => (
-          <div key={index} className="bg-white text-center p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-primary-blue/10 border border-transparent hover:border-primary-blue/20">
-            <div className="flex justify-center mb-4">
-              <CheckIcon className="w-12 h-12 text-primary-blue" />
+    <section id="nosotros" className="py-0">
+      <div className="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="text-center lg:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark leading-snug">
+            Aseguramos resultados <span className="text-brand-accent">exitosos para tus proyectos</span>
+          </h2>
+          <img 
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop"
+            alt="Equipo de trabajo colaborando en un proyecto"
+            className="rounded-2xl shadow-xl mt-8 w-full h-auto object-cover"
+          />
+        </div>
+        <div className="flex flex-col gap-8">
+            <h3 className="text-2xl font-bold text-brand-dark">
+                Somos una agencia digital que lleva más de 10 años ayudando a empresas a impulsar su crecimiento con <span className="text-brand-blue">soluciones digitales integrales.</span>
+            </h3>
+            <p className="text-brand-gray leading-relaxed">
+                Nuestro enfoque combina estrategia, creatividad y tecnología para desarrollar proyectos efectivos desde el primer clic. Brindamos servicios especializados en Diseño y Desarrollo Web, E-commerce, Gestión de Redes Sociales, Branding, SEO y SEM, Producción Audiovisual y Desarrollo de Software a medida.
+            </p>
+            <p className="font-semibold text-brand-dark">Todas nuestras soluciones están enfocadas en:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                {values.map((item) => (
+                    <ValueIcon key={item.title} icon={item.icon} title={item.title} />
+                ))}
             </div>
-            <h3 className="text-xl font-bold text-dark-slate mb-2">{benefit.title}</h3>
-            <p className="text-slate">{benefit.description}</p>
-          </div>
-        ))}
+        </div>
       </div>
     </section>
   );

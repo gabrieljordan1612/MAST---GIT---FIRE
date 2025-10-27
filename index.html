@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MAST - Desarrollo Web de Vanguardia</title>
+    <title>MAST - Experiencias Digitales de Vanguardia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -17,14 +17,23 @@
               'poppins': ['Poppins', 'sans-serif'],
             },
             colors: {
-              'white': '#ffffff',
-              'off-white': '#f7faff',
-              'light-slate': '#e2e8f0',
-              'slate': '#64748b',
-              'dark-slate': '#1e293b',
-              'primary-blue': '#3b82f6',
-              'navy': '#0a192f',
-            }
+              'brand-blue': '#000000',
+              'brand-accent': '#A2D5C6',
+              'brand-red': '#A2D5C6',
+              'brand-background': '#F6F6F6',
+              'brand-dark': '#000000',
+              'brand-gray': '#000000',
+              'brand-light-gray': '#CFFFE2',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
           }
         }
       }
@@ -32,63 +41,8 @@
     <style>
       body {
         font-family: 'Poppins', sans-serif;
-        background-color: #f7faff;
-        color: #64748b;
-        cursor: none; /* Hide default cursor */
-      }
-      
-      /* Custom Cursor */
-      .custom-cursor-dot {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        background-color: #3b82f6;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        transition: width 0.3s, height 0.3s;
-      }
-      .custom-cursor-outline {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #3b82f6;
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        transition: transform 0.1s ease-out, width 0.3s, height 0.3s, background-color 0.3s;
-      }
-      .cursor-interaction .custom-cursor-dot {
-        width: 0;
-        height: 0;
-      }
-      .cursor-interaction .custom-cursor-outline {
-          width: 60px;
-          height: 60px;
-          background-color: rgba(59, 130, 246, 0.1);
-      }
-
-      /* Form Input Focus Glow */
-      input:focus, textarea:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px #f7faff, 0 0 0 4px rgba(59, 130, 246, 0.5);
-      }
-      
-      /* Scroll Animation */
-      .section-fade-up {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-      .section-fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
+        background-color: #F6F6F6;
+        color: rgba(0, 0, 0, 0.75);
       }
     </style>
   <script type="importmap">
