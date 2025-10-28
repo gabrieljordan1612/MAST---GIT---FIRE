@@ -8,29 +8,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              'poppins': ['Poppins', 'sans-serif'],
+              'inter': ['Inter', 'sans-serif'],
             },
             colors: {
-              'brand-blue': '#000000',
-              'brand-accent': '#B6B09F',
-              'brand-red': '#B6B09F',
-              'brand-background': '#F2F2F2',
-              'brand-dark': '#000000',
-              'brand-gray': '#000000',
-              'brand-light-gray': '#EAE4D5',
+              'primary': '#4F46E5',
+              'primary-hover': '#4338CA',
+              'secondary': '#1F2937',
+              'light-gray': '#F9FAFB',
+              'medium-gray': '#E5E7EB',
+              'text-primary': '#111827',
+              'text-secondary': '#6B7280',
             },
             animation: {
-              'fade-in': 'fadeIn 0.5s ease-in-out forwards',
+              'fade-in-up': 'fadeInUp 0.8s ease-in-out forwards',
             },
             keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
             },
@@ -40,15 +40,18 @@
     </script>
     <style>
       body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #F2F2F2;
-        color: rgba(0, 0, 0, 0.75);
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #111827;
       }
-      .cursor-blink {
-        animation: blink 0.8s infinite;
+      .section-fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
       }
-      @keyframes blink {
-        50% { opacity: 0; }
+      .section-fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   <script type="importmap">

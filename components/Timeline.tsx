@@ -1,58 +1,33 @@
 import React from 'react';
 
-const TimelineCard: React.FC<{ plan: string; days: number }> = ({ plan, days }) => (
-  <div className="bg-white rounded-xl shadow-lg text-center text-brand-dark overflow-hidden transform transition-all duration-300 hover:scale-105">
-    <div className="bg-brand-light-gray py-2">
-      <p className="font-semibold text-sm">{plan}</p>
-    </div>
-    <div className="py-4 px-6">
-      <p className="text-6xl font-extrabold">{days}</p>
-      <p className="text-brand-dark font-semibold">Días</p>
-    </div>
-  </div>
-);
-
-const Timeline: React.FC = () => {
-  return (
-    <section 
-        className="py-20 bg-brand-blue text-white"
-        style={{
-            backgroundImage: `
-                radial-gradient(circle at 15% 25%, rgba(182, 176, 159, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(182, 176, 159, 0.1) 0%, transparent 50%)
-            `,
-            backgroundColor: '#000000'
-        }}
-    >
-      <div className="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            Tu página web en <br />
-            <span 
-              className="text-brand-accent"
-              style={{textShadow: '0 0 10px rgba(182, 176, 159, 0.3)'}}
-            >
-              tiempo récord
-            </span>
-          </h2>
-          <p className="mt-6 text-lg opacity-80 max-w-md mx-auto lg:mx-0">
-            Con nuestra metodología ágil, no esperes más para lanzar tu web.
-          </p>
-          <a
-            href="#contacto"
-            className="mt-8 inline-block bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white hover:text-brand-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-          >
-            ¿Empezamos Hoy?
-          </a>
-        </div>
-        <div className="flex justify-center items-center gap-4 sm:gap-6">
-          <TimelineCard plan="Plan Profesional" days={5} />
-          <TimelineCard plan="Plan Empresarial" days={10} />
-          <TimelineCard plan="Plan Corporativo" days={15} />
-        </div>
-      </div>
-    </section>
-  );
+const SetupSection: React.FC = () => {
+    const steps = [
+        { title: '1. Descubrimiento y Estrategia', desc: 'Nos reunimos para entender tus objetivos y definir el plan de acción perfecto para tu proyecto.', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+        { title: '2. Diseño y Desarrollo', desc: 'Creamos prototipos y desarrollamos el producto con metodologías ágiles y feedback constante.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H21' },
+        { title: '3. Lanzamiento y Crecimiento', desc: 'Desplegamos la solución y te acompañamos con soporte y estrategias para su evolución.', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' },
+    ];
+    return (
+        <section className="py-24 bg-light-gray">
+             <div className="container mx-auto px-6">
+                <div className="text-center mb-12">
+                    <span className="text-sm font-semibold bg-blue-100 text-primary py-1 px-3 rounded-full">Nuestro Proceso</span>
+                    <h2 className="text-4xl font-bold text-text-primary mt-4">Nuestro Proceso de Colaboración</h2>
+                    <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">Un proceso claro y colaborativo garantiza que entreguemos resultados excepcionales a tiempo.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-12">
+                    {steps.map((step, i) => (
+                        <div key={i} className="text-center">
+                            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-md">
+                                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={step.icon} /></svg>
+                            </div>
+                            <h3 className="text-xl font-semibold text-text-primary">{step.title}</h3>
+                            <p className="mt-2 text-text-secondary">{step.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
-export default Timeline;
+export default SetupSection;
