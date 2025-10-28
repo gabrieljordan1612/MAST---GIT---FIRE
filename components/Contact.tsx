@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
       className="py-16"
       style={{
         backgroundColor: '#000000',
-        backgroundImage: 'radial-gradient(rgba(162, 213, 198, 0.1) 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(rgba(182, 176, 159, 0.1) 1px, transparent 1px)',
         backgroundSize: '20px 20px'
       }}
     >

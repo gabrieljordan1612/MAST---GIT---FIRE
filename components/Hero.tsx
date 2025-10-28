@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden"
       style={{
         backgroundColor: '#000000',
-        backgroundImage: 'radial-gradient(circle at 15% 25%, rgba(162, 213, 198, 0.1) 0%, transparent 35%), radial-gradient(circle at 85% 75%, rgba(162, 213, 198, 0.05) 0%, transparent 40%)'
+        backgroundImage: 'radial-gradient(circle at 15% 25%, rgba(182, 176, 159, 0.1) 0%, transparent 35%), radial-gradient(circle at 85% 75%, rgba(182, 176, 159, 0.05) 0%, transparent 40%)'
       }}
     >
       <div className="container mx-auto px-6 lg:px-12 z-10">
