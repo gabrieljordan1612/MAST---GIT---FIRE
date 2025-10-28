@@ -18,8 +18,8 @@ const Timeline: React.FC = () => {
         className="py-20 bg-brand-blue text-white"
         style={{
             backgroundImage: `
-                radial-gradient(circle at 15% 25%, rgba(162, 213, 198, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(162, 213, 198, 0.1) 0%, transparent 50%)
+                radial-gradient(circle at 15% 25%, rgba(182, 176, 159, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(182, 176, 159, 0.1) 0%, transparent 50%)
             `,
             backgroundColor: '#000000'
         }}
@@ -30,7 +30,7 @@ const Timeline: React.FC = () => {
             Tu página web en <br />
             <span 
               className="text-brand-accent"
-              style={{textShadow: '0 0 10px rgba(162, 213, 198, 0.3)'}}
+              style={{textShadow: '0 0 10px rgba(182, 176, 159, 0.3)'}}
             >
               tiempo récord
             </span>

@@ -18,12 +18,12 @@
             },
             colors: {
               'brand-blue': '#000000',
-              'brand-accent': '#A2D5C6',
-              'brand-red': '#A2D5C6',
-              'brand-background': '#F6F6F6',
+              'brand-accent': '#B6B09F',
+              'brand-red': '#B6B09F',
+              'brand-background': '#F2F2F2',
               'brand-dark': '#000000',
               'brand-gray': '#000000',
-              'brand-light-gray': '#CFFFE2',
+              'brand-light-gray': '#EAE4D5',
             },
             animation: {
               'fade-in': 'fadeIn 0.5s ease-in-out forwards',
@@ -41,8 +41,14 @@
     <style>
       body {
         font-family: 'Poppins', sans-serif;
-        background-color: #F6F6F6;
+        background-color: #F2F2F2;
         color: rgba(0, 0, 0, 0.75);
+      }
+      .cursor-blink {
+        animation: blink 0.8s infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
       }
     </style>
   <script type="importmap">

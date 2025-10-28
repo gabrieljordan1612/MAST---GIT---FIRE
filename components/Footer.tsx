@@ -3,7 +3,7 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, TikTokIcon } from './icons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-brand-light-gray">
+    <footer className="bg-brand-background border-t border-brand-light-gray/50">
       <div className="container mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
