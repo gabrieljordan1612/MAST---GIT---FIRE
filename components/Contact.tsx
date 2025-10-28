@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
                     <select className="w-full bg-white text-brand-dark p-4 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-brand-accent">
                         <option>¿Quién soy?</option>
                     </select>
-                    <ChevronDownIcon className="w-5 h-5 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <ChevronDownIcon className="w-5 h-5 text-brand-dark/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
                 <input type="text" placeholder="Empresa" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
              </div>
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                 <select className="w-full bg-white text-brand-dark p-4 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-brand-accent">
                     <option>Necesito</option>
                 </select>
-                <ChevronDownIcon className="w-5 h-5 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDownIcon className="w-5 h-5 text-brand-dark/50 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
             </div>
             <input type="text" placeholder="Cuéntanos cual es tu presupuesto" className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" />
             <textarea placeholder="Cuéntanos un poco de tus requerimientos" rows={4} className="w-full bg-white text-brand-dark p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"></textarea>

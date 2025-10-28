@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-brand-light-gray py-24 md:py-32">
           <AnimatedSection>
             <Services />
           </AnimatedSection>
@@ -33,7 +33,7 @@ const App: React.FC = () => {
           </AnimatedSection>
         </section>
 
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-brand-light-gray py-24 md:py-32">
           <AnimatedSection>
             <Offerings />
           </AnimatedSection>
@@ -49,7 +49,7 @@ const App: React.FC = () => {
             <Timeline />
         </AnimatedSection>
 
-        <section className="bg-white py-24 md:py-32">
+        <section className="bg-brand-light-gray py-24 md:py-32">
             <AnimatedSection>
                 <Testimonials />
             </AnimatedSection>
