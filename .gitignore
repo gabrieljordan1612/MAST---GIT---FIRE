@@ -1,3 +1,4 @@
+git commit -m "Add package-lock.json and ensure .firebase/ is ignored"
 # Logs
 logs
 *.log
