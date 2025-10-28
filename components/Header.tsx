@@ -35,9 +35,9 @@ const Header: React.FC = () => {
     const navLinks = (
         <>
             <a href="#" className="flex items-center gap-1 text-text-secondary hover:text-primary font-medium transition-colors">Pages <ChevronDownIcon /></a>
-            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">About</a>
-            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Blog</a>
-            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Pricing</a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Sobre nosotros</a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Servicios</a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Contacto</a>
         </>
     );
 
