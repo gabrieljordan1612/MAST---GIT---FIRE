@@ -12,7 +12,6 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className }
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // We only want to trigger the animation once
         if (entry.isIntersecting) {
           setIsVisible(true);
           observer.unobserve(entry.target);
@@ -21,7 +20,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className }
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1, // Trigger when 10% of the element is visible
+        threshold: 0.1,
       }
     );
 

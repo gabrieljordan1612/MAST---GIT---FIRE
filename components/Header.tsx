@@ -1,108 +1,88 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDownIcon } from './icons';
 
-const Logo = () => (
-  <a href="#" className="flex items-center text-white">
-    <svg className="h-7 w-auto" viewBox="0 0 115 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="26" fontFamily="Poppins, sans-serif" fontSize="30" fontWeight="700" fill="currentColor">
-            M
-        </text>
-        <path d="M36 27 L45 5 L54 27" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-        <text x="60" y="26" fontFamily="Poppins, sans-serif" fontSize="30" fontWeight="700" fill="currentColor">
-            ST
-        </text>
+const LightningIcon = () => (
+    <div className="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+        <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2L3 14h9l-1 8 11-12h-9z" />
+        </svg>
+    </div>
+);
+
+const ChevronDownIcon = () => (
+    <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
     </svg>
-  </a>
+);
+
+const ArrowRightIcon = () => (
+    <svg className="w-5 h-5 text-text-secondary group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
 );
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-  const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { 
-      href: '#servicios', 
-      label: 'Servicios',
-      dropdown: [
-        { href: '#servicios', label: 'Diseño y Desarrollo Web' },
-        { href: '#servicios', label: 'E-commerce' },
-        { href: '#servicios', label: 'Gestión de Redes Sociales' },
-        { href: '#servicios', label: 'SEO y SEM' },
-      ]
-    },
-    { href: '#portafolio', label: 'Portafolio' },
-    { href: '#precios', label: 'Precios' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#contacto', label: 'Contacto' },
-  ];
-  
-  const linkClasses = "text-white hover:opacity-80 transition-opacity duration-300 font-medium text-lg";
+    const navLinks = (
+        <>
+            <a href="#" className="flex items-center gap-1 text-text-secondary hover:text-primary font-medium transition-colors">Pages <ChevronDownIcon /></a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">About</a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Blog</a>
+            <a href="#" className="text-text-secondary hover:text-primary font-medium transition-colors">Pricing</a>
+        </>
+    );
 
-  return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-brand-blue shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto flex items-center justify-between relative py-4 px-6 lg:px-12">
-        <Logo />
-        <nav className="hidden lg:flex items-center space-x-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          {navLinks.map((link) => (
-            link.dropdown ? (
-              <div 
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <a href={link.href} className={`${linkClasses} flex items-center gap-1`}>
-                  {link.label}
-                  <ChevronDownIcon className="w-4 h-4" />
-                </a>
-                {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 animate-fade-in">
-                    {link.dropdown.map(item => (
-                      <a key={item.label} href={item.href} className="block px-4 py-2 text-sm text-brand-dark hover:bg-brand-background">
-                        {item.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <a key={link.href} href={link.href} className={linkClasses}>
-                {link.label}
-              </a>
-            )
-          ))}
-        </nav>
-        <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      {isOpen && (
-        <div className="lg:hidden bg-brand-blue border-t border-white/10">
-          <nav className="flex flex-col items-center space-y-6 py-6">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={linkClasses}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
-  );
+    return (
+        <>
+            <header className="fixed top-4 left-0 right-0 z-50 flex justify-center">
+                <div
+                    className={`
+                        transition-all duration-500 ease-in-out
+                        bg-white/80 backdrop-blur-lg rounded-full border border-gray-200/60 shadow-lg
+                        flex items-center w-full h-16
+                        ${isScrolled ? 'max-w-6xl justify-between px-6' : 'max-w-3xl justify-center px-6 gap-8'}
+                    `}
+                >
+                    <a href="#" className="flex items-center gap-2">
+                        <LightningIcon />
+                        <span className="text-xl font-bold text-text-primary">MAST</span>
+                    </a>
+                    <nav className="hidden md:flex items-center gap-8">
+                        {navLinks}
+                    </nav>
+                    <a href="#" className="hidden md:flex items-center gap-2 group bg-white text-text-primary font-semibold py-2 px-4 rounded-full border border-gray-300 hover:border-gray-400 transition-all">
+                        Book a demo <ArrowRightIcon />
+                    </a>
+                    <div className="md:hidden">
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none">
+                             <svg className="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16"} /></svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            {isMenuOpen && (
+                <div className="fixed top-24 left-4 right-4 z-40 md:hidden">
+                    <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/80 p-4">
+                        <nav className="flex flex-col items-center gap-4">
+                            {navLinks}
+                            <a href="#" className="mt-2 group flex items-center gap-2 bg-white text-text-primary font-semibold py-2 px-4 rounded-full border border-gray-300 hover:border-gray-400 transition-all">
+                                Book a demo <ArrowRightIcon />
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 };
 
 export default Header;
