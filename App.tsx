@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AnimatedSection from './components/AnimatedSection';
 import Header from './components/Header';
 import HeroSection from './components/Hero';
-import SolutionsSection from './components/Services';
 import FeaturesSection from './components/Offerings';
 import AutomationSection from './components/WhyChooseUs';
 import SetupSection from './components/Timeline';
+import ContactPage from './components/Contact';
+import Footer from './components/Footer';
+import AboutPage from './components/About';
 
 const ClientsSection: React.FC = () => {
     const clients = ['Bioplex', 'Zenithia', 'Nexiflow', 'Vortexia', 'LUMITRIX'];
@@ -59,19 +61,13 @@ const IntegrationsSection: React.FC = () => {
     );
 };
 
-const App: React.FC = () => {
-  return (
-    <div className="bg-white text-text-primary font-inter antialiased">
-      <Header />
-      <main>
+const HomePage: React.FC = () => (
+    <>
         <AnimatedSection>
-          <HeroSection />
+            <HeroSection />
         </AnimatedSection>
         <AnimatedSection>
             <ClientsSection />
-        </AnimatedSection>
-        <AnimatedSection>
-          <SolutionsSection />
         </AnimatedSection>
         <AnimatedSection>
           <FeaturesSection />
@@ -85,7 +81,27 @@ const App: React.FC = () => {
         <AnimatedSection>
           <SetupSection />
         </AnimatedSection>
+    </>
+);
+
+
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const handleNavigate = (page: 'home' | 'contact' | 'about') => {
+    setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
+
+  return (
+    <div className="bg-white text-text-primary font-inter antialiased">
+      <Header onNavigate={handleNavigate} />
+      <main>
+        {currentPage === 'home' && <HomePage />}
+        {currentPage === 'contact' && <ContactPage />}
+        {currentPage === 'about' && <AboutPage />}
       </main>
+      <Footer />
     </div>
   );
 };
